@@ -3,7 +3,8 @@
 This project is divided in two parts: The first part covers the development of a deep learning trading bot which trades based on the past chart prices as input data. Hereby we are using 100 million chart points from the EUR-USD index between 2018 and 2020. The second part covers the development of a trading bot which utilizes financial news data as input. This part is also based on the EUR-USD index but also includes 20k news from the business and politics section from the Financial Times.
 
 ## 1. Deep-Neuronal-Network Trading Bot
-The training of this trading bot is based on EUR-USD tick data from <a href="https://financebets.de](https://fxcm-api.readthedocs.io/en/latest/marketdata.html">FXCM-Historical-Data-API</a><br /><br /> This FXCM-API is by far one of the most accurate market data providers with an average of three ticks per second and is freely available (sick!). The data can be downloaded via the following link structure: https://tickdata.fxcorporate.com/{instrument}/{year}/{int_of_week_of_year}.csv.gz
+The training of this trading bot is based on EUR-USD tick data from <a href="https://financebets.de](https://fxcm-api.readthedocs.io/en/latest/marketdata.html">FXCM-Historical-Data-API</a><br /><br />
+This FXCM-API is by far one of the most accurate market data providers with an average of three ticks per second and is freely available (sick!). The data can be downloaded via the following link structure: https://tickdata.fxcorporate.com/{instrument}/{year}/{int_of_week_of_year}.csv.gz
 The workflow for creating the DNN-Bot is devided in five steps where each step is presented by one subfolders. In the following each subfolder is explained.
 
 ### 1.1 Data Preparation
@@ -26,7 +27,7 @@ FXCMPY's REST API is used to connect Python to the real live forex market. At th
 In the directory 'autoencoder/' you can find a trained autoencoder which reduces the dimensionality of the input data by nearly 90%. After scaling and normalizing the input price data, the autoencoder tries to compress the available information in the array with the EURUSD prices. This allows the trading bot to gain more information from a smaller number of "compressed" price-arrays. The scripts used for training and some other scripts for additional measurements and method testing can be found in the respective directory.
 
 ## 2. Natural-Language-Processing Trading Bot
-The training of the second trading bot is based on the EURUSD data but also on more than 20 thousand financial news from the Financial Times. The data can be downloaded via the Financial Times API and the following link structure: http://content.guardianapis.com/search?from-date=2018-01-01&to-date=2020-12-31&format=xml&page-size=20&page=2&type=article&section=politics&show-fields=headline,main&api-key=your_api_key
+The training of the second trading bot is based on the EURUSD data but also on more than 20 thousand financial news from the Financial Times. The data can be downloaded via the Financial Times API and the following link structure: http://content.guardianapis.com/search?from-date=2018-01-01&to-date=2020-12-31&format=xml&page-size=20&page=2&type=article&section=politics&show-fields=headline,main&api-key=your_api_key<br />
 The workflow for creating the NLP-Bot is devided in three steps whereby each step is presented by one subfolders. In the following each subfolder is explained.
 
 ### 2.1 Download News Data from Financial Times
