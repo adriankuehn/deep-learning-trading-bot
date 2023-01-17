@@ -1,0 +1,1 @@
+You have to execute prices_eurusd_prep.py first.
